@@ -1,3 +1,14 @@
 {
-  "recommendations": ["streetsidesoftware.code-spell-checker"]
+  "recommendations": [
+    // Linting / Formatting
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "usernamehw.errorlens",
+
+    // Showing todo comments
+    "gruntfuggly.todo-tree",
+
+    // Spell Checking
+    "streetsidesoftware.code-spell-checker"
+  ]
 }
