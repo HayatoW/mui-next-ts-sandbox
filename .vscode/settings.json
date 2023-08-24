@@ -57,6 +57,7 @@
     "opentelemetry",
     "roboto",
     "Threadsafe",
+    "unoptimized",
     "zipkin"
   ],
   "grammarly.selectors": [
