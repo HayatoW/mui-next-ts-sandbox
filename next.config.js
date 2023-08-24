@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   reactStrictMode: true,
   swcMinify: true,
   modularizeImports: {
@@ -7,16 +8,7 @@ const nextConfig = {
       transform: "@mui/icons-material/{{member}}",
     },
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "source.unsplash.com",
-        port: "",
-        pathname: "/random",
-      },
-    ],
-  },
+  images: { unoptimized: true },
 };
 
 module.exports = nextConfig;
