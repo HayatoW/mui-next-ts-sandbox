@@ -55,6 +55,7 @@
     "napi",
     "nextjs",
     "opentelemetry",
+    "roboto",
     "Threadsafe",
     "zipkin"
   ],
