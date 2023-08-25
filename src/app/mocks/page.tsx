@@ -3,6 +3,7 @@
 import * as React from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
@@ -44,24 +45,45 @@ export default function MocksPage() {
           Mocks Page
         </Typography>
         <div>
-          <button onClick={handleGetBook}>Load book</button>
+          {!book && (
+            <Button variant="contained" onClick={handleGetBook}>
+              Load book
+            </Button>
+          )}
           {book && (
             <>
               <img src={book.imageUrl} alt={book.title} width="250" />
-              <h1>{book.title}</h1>
-              <p>{book.description}</p>
-              <button onClick={handleGetReviews}>Load reviews</button>
+              <Typography variant="h4" component="h1" gutterBottom>
+                {book.title}
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                {book.description}
+              </Typography>
+              {!reviews && (
+                <Button variant="contained" onClick={handleGetReviews}>
+                  Load reviews
+                </Button>
+              )}
             </>
           )}
           {reviews && (
-            <ul>
-              {reviews.map((review) => (
-                <li key={review.id}>
-                  <p>{review.text}</p>
-                  <p>{review.author}</p>
-                </li>
-              ))}
-            </ul>
+            <>
+              <Typography variant="h4" component="h1" gutterBottom>
+                Reviews
+              </Typography>
+              <ul>
+                {reviews.map((review) => (
+                  <li key={review.id}>
+                    <Typography variant="body1" gutterBottom>
+                      {review.text}
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                      {review.author}
+                    </Typography>
+                  </li>
+                ))}
+              </ul>
+            </>
           )}
         </div>
       </Box>
