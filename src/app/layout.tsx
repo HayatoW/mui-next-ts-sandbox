@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
@@ -15,15 +16,15 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import HomeIcon from "@mui/icons-material/Home";
 import StarIcon from "@mui/icons-material/Star";
 import ChecklistIcon from "@mui/icons-material/Checklist";
+import CloudOffIcon from "@mui/icons-material/CloudOff";
 import SettingsIcon from "@mui/icons-material/Settings";
 import SupportIcon from "@mui/icons-material/Support";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 
-export const metadata = {
-  title: "Next.js App Router + Material UI v5",
-  description: "Next.js App Router + Material UI v5",
-};
+if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+  require("@/mocks");
+}
 
 const DRAWER_WIDTH = 240;
 
@@ -31,6 +32,7 @@ const LINKS = [
   { text: "Home", href: "/", icon: HomeIcon },
   { text: "Starred", href: "/starred", icon: StarIcon },
   { text: "Tasks", href: "/tasks", icon: ChecklistIcon },
+  { text: "Mocks", href: "/mocks", icon: CloudOffIcon },
 ];
 
 const PLACEHOLDER_LINKS = [
