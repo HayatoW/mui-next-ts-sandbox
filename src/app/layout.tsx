@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
@@ -19,11 +20,6 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import SupportIcon from "@mui/icons-material/Support";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
-
-export const metadata = {
-  title: "Next.js App Router + Material UI v5",
-  description: "Next.js App Router + Material UI v5",
-};
 
 const DRAWER_WIDTH = 240;
 
