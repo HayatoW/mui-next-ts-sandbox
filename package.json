@@ -25,6 +25,10 @@
     "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "msw": "^1.2.3",
     "typescript": "latest"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
