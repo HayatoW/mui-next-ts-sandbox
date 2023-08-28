@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import { Book, Review } from "@/mocks/types";
+import Image from "next/image";
 
 export default function MocksPage() {
   const [book, setBook] = React.useState<Book | null>(null);
@@ -52,7 +53,12 @@ export default function MocksPage() {
           )}
           {book && (
             <>
-              <img src={book.imageUrl} alt={book.title} width="250" />
+              <Image
+                src={book.imageUrl}
+                alt={book.title}
+                height={399.836}
+                width="250"
+              />
               <Typography variant="h4" component="h1" gutterBottom>
                 {book.title}
               </Typography>
