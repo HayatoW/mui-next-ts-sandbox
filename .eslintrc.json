@@ -1,4 +1,0 @@
-{
-  // https://nextjs.org/docs/app/building-your-application/configuring/eslint#additional-configurations
-  "extends": ["eslint:recommended", "next/core-web-vitals"]
-}
