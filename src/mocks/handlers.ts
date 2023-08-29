@@ -23,4 +23,15 @@ export const handlers = [
       ])
     );
   }),
+  rest.get("/data", (_req, res, ctx) => {
+    return res(
+      ctx.json<string[]>([
+        "facebook/flipper",
+        "vuejs/vuepress",
+        "rust-lang/rust",
+        "vercel/next.js",
+      ]),
+      ctx.delay(5000)
+    );
+  }),
 ];

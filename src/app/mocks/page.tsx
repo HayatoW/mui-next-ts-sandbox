@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import useSWR from "swr";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -8,8 +9,12 @@ import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import { Book, Review } from "@/mocks/types";
+import fetch from "@/libs/fetch";
 
 export default function MocksPage() {
+  const { data } = useSWR<string[]>("/data", fetch);
+  const { data: data2 } = useSWR(null, fetch);
+
   const [book, setBook] = React.useState<Book | null>(null);
   const [reviews, setReviews] = React.useState<Review[] | null>(null);
 
@@ -44,6 +49,16 @@ export default function MocksPage() {
         <Typography variant="body1" gutterBottom>
           Mocks Page
         </Typography>
+        {data2}
+        <div style={{ textAlign: "center" }}>
+          <h1>Trending Projects</h1>
+          {data2}
+          <div>
+            {data
+              ? data.map((project) => <p key={project}>{project}</p>)
+              : "loading..."}
+          </div>
+        </div>
         <div>
           {!book && (
             <Button variant="contained" onClick={handleGetBook}>
